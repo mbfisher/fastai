@@ -19,24 +19,20 @@ Next step is create a Python environment. If you're on a machine with a GPU, for
 
 ```sh
 conda env update
+conda activate fastai
 ```
 
 If you're on a machine without a GPU, which is probably the case if you're on a laptop, you can install a CPU only environment instead:
 
 ```sh
 conda env update -f environment-cpu.yml
+conda activate fastai-cpu
 ```
 
-This downloads all of the dependencies and then all you have to do is:
+If the `activate` command fails you might be running a newer version of `conda`; try this instead:
 
 ```sh
-conda activate fastai
-```
-
-If this command fails you might be running a newer version of `conda`; try this instead:
-
-```sh
-source activate fastai
+source activate fastai[-cpu]
 ```
 
 To update everything at any time, cd to your repo and:
