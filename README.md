@@ -12,17 +12,31 @@ Recommended installation approach is to clone fastai using `git`:
 
 ```sh
 git clone https://github.com/fastai/fastai.git
+cd fastai
 ```
-Then, `cd` to the fastai folder and create the python environment:
+
+Next step is create a Python environment. If you're on a machine with a GPU, for example Paperspace or Crestle:
 
 ```sh
-cd fastai
 conda env update
 ```
+
+If you're on a machine without a GPU, which is probably the case if you're on a laptop, you can install a CPU only environment instead:
+
+```sh
+conda env update -f environment-cpu.yml
+```
+
 This downloads all of the dependencies and then all you have to do is:
 
 ```sh
 conda activate fastai
+```
+
+If this command fails you might be running a newer version of `conda`; try this instead:
+
+```sh
+source activate fastai
 ```
 
 To update everything at any time, cd to your repo and:
@@ -30,12 +44,6 @@ To update everything at any time, cd to your repo and:
 ```sh
 git pull
 conda env update
-```
-
-To install a cpu only environment instead:
-```sh
-cd fastai
-conda env update -f environment-cpu.yml
 ```
 
 You can also install this library in the local environment using ```pip```
